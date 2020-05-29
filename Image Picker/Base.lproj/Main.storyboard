@@ -31,11 +31,15 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="n3l-L8-Kod"/>
-                                    <barButtonItem systemItem="camera" id="RaT-g3-uPm"/>
+                                    <barButtonItem systemItem="camera" id="RaT-g3-uPm">
+                                        <connections>
+                                            <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" id="kIM-kH-OZB"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="uhf-JR-2ZU"/>
                                     <barButtonItem title="album" id="IgR-Jr-oOU">
                                         <connections>
-                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="o6V-sx-5A5"/>
+                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="xb8-UV-UcN"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Qf7-ey-7RE"/>
@@ -53,9 +57,17 @@
                                     <constraint firstAttribute="height" constant="44" id="GML-p7-iNZ"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem systemItem="action" id="IyC-VU-afT"/>
+                                    <barButtonItem systemItem="action" id="IyC-VU-afT">
+                                        <connections>
+                                            <action selector="Share:" destination="BYZ-38-t0r" id="ncQ-NN-XgO"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="p7y-GO-IhE"/>
-                                    <barButtonItem systemItem="cancel" id="Hj6-lQ-NEF"/>
+                                    <barButtonItem systemItem="cancel" id="Hj6-lQ-NEF">
+                                        <connections>
+                                            <action selector="discardMeme:" destination="BYZ-38-t0r" id="l8x-EI-IGC"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wWy-V7-Inj">
@@ -88,8 +100,9 @@
                     </view>
                     <connections>
                         <outlet property="bottomText" destination="j51-Kl-Oy9" id="QhW-Bq-7BY"/>
-                        <outlet property="cameraButton" destination="RaT-g3-uPm" id="QuJ-az-3Hq"/>
+                        <outlet property="cameraButton" destination="RaT-g3-uPm" id="WnC-HA-yIb"/>
                         <outlet property="imagePickerView" destination="ThP-B3-VKn" id="OGT-R5-Dfl"/>
+                        <outlet property="shareButton" destination="IyC-VU-afT" id="lvS-tp-xN3"/>
                         <outlet property="topText" destination="wWy-V7-Inj" id="7oj-tj-rOv"/>
                     </connections>
                 </viewController>
