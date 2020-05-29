@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,71 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Image_Picker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bF2-As-isS">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="n3l-L8-Kod"/>
+                                    <barButtonItem systemItem="camera" id="RaT-g3-uPm"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uhf-JR-2ZU"/>
+                                    <barButtonItem title="album" id="IgR-Jr-oOU"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Qf7-ey-7RE"/>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ThP-B3-VKn">
+                                <rect key="frame" x="0.0" y="175.5" width="375" height="316"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="316" id="Jz3-9U-Y9b"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="top" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wWy-V7-Inj">
+                                <rect key="frame" x="139" y="93" width="97" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="bottom" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j51-Kl-Oy9">
+                                <rect key="frame" x="139" y="551" width="97" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luf-aD-BRa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="IyC-VU-afT"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="p7y-GO-IhE"/>
+                                    <barButtonItem systemItem="cancel" id="Hj6-lQ-NEF"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ThP-B3-VKn" firstAttribute="leading" secondItem="bF2-As-isS" secondAttribute="leading" id="5Zz-v9-UtD"/>
+                            <constraint firstItem="bF2-As-isS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7w3-FK-TZl"/>
+                            <constraint firstItem="luf-aD-BRa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8CE-Fh-PR0"/>
+                            <constraint firstItem="ThP-B3-VKn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CBv-qg-Coq"/>
+                            <constraint firstItem="ThP-B3-VKn" firstAttribute="leading" secondItem="luf-aD-BRa" secondAttribute="leading" id="Gqy-FV-hBb"/>
+                            <constraint firstItem="ThP-B3-VKn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PeK-de-lzi"/>
+                            <constraint firstItem="ThP-B3-VKn" firstAttribute="trailing" secondItem="luf-aD-BRa" secondAttribute="trailing" id="gEl-gV-DXr"/>
+                            <constraint firstItem="ThP-B3-VKn" firstAttribute="trailing" secondItem="bF2-As-isS" secondAttribute="trailing" id="iB5-VH-CNO"/>
+                            <constraint firstItem="ThP-B3-VKn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wPn-VR-LFN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imagePickerView" destination="ThP-B3-VKn" id="OGT-R5-Dfl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="124.58770614692655"/>
         </scene>
     </scenes>
 </document>
