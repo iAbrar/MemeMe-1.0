@@ -24,7 +24,11 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="n3l-L8-Kod"/>
                                     <barButtonItem systemItem="camera" id="RaT-g3-uPm"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="uhf-JR-2ZU"/>
-                                    <barButtonItem title="album" id="IgR-Jr-oOU"/>
+                                    <barButtonItem title="album" id="IgR-Jr-oOU">
+                                        <connections>
+                                            <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" id="o6V-sx-5A5"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Qf7-ey-7RE"/>
                                 </items>
                             </toolbar>
