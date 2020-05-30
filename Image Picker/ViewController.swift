@@ -162,8 +162,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     func generateMemedImage() -> UIImage {
         
         // Hide toolbar and navbar
-        navigationController?.setToolbarHidden(true, animated: true)
-        navigationController?.setNavigationBarHidden(true, animated: true)
+        hideTopAndBottomBars(true)
+        
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
@@ -171,8 +171,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         UIGraphicsEndImageContext()
         
         // Show toolbar and navbar
-        navigationController?.setToolbarHidden(false, animated: true)
-        navigationController?.setNavigationBarHidden(false, animated: true)
+        hideTopAndBottomBars(false)
         
         return memedImage
     }
@@ -199,10 +198,17 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         bottomText.text = "BOTTOM"
     }
     
-    //
+    // Configure text field with text and assign meme text attribute
     func configure(textField: UITextField, withText text: String) {
         textField.text = text
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .center
+    }
+    
+    // toggle toolbar and navigation bar
+    func hideTopAndBottomBars(_ hide: Bool) {
+        
+        navigationController?.setToolbarHidden(hide, animated: true)
+        navigationController?.setNavigationBarHidden(hide, animated: true)
     }
 }
