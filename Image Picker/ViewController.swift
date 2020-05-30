@@ -189,7 +189,9 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         self.present(activityController, animated: true, completion: nil)
         
         activityController.completionWithItemsHandler = { (activity, success, items, error) in
-            self.save()
+            if(success) {
+                self.save()
+            }
         }
     }
     
