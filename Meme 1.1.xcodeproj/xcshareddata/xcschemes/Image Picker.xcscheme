@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "880ECA62247E2DD20035B079"
-               BuildableName = "Image Picker.app"
-               BlueprintName = "Image Picker"
-               ReferencedContainer = "container:Image Picker.xcodeproj">
+               BuildableName = "Meme 1.1.app"
+               BlueprintName = "Meme 1.1"
+               ReferencedContainer = "container:Meme 1.1.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "880ECA76247E2DD80035B079"
-               BuildableName = "Image PickerTests.xctest"
-               BlueprintName = "Image PickerTests"
-               ReferencedContainer = "container:Image Picker.xcodeproj">
+               BuildableName = "Meme 1.1Tests.xctest"
+               BlueprintName = "Meme 1.1Tests"
+               ReferencedContainer = "container:Meme 1.1.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "880ECA62247E2DD20035B079"
-            BuildableName = "Image Picker.app"
-            BlueprintName = "Image Picker"
-            ReferencedContainer = "container:Image Picker.xcodeproj">
+            BuildableName = "Meme 1.1.app"
+            BlueprintName = "Meme 1.1"
+            ReferencedContainer = "container:Meme 1.1.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -62,17 +62,18 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <PathRunnable
-         runnableDebuggingMode = "0"
-         FilePath = "/&lt;placeholder&gt;">
-      </PathRunnable>
+      <RemoteRunnable
+         runnableDebuggingMode = "1"
+         BundleIdentifier = "abrar.me.Image-Picker"
+         RemotePath = "/Users/imac/Library/Developer/CoreSimulator/Devices/DC4D0E8B-7874-4E65-869A-D96E2A2A5B30/data/Containers/Bundle/Application/9E5A71F1-7919-47CD-AB40-343D738EFEC3/Image Picker.app">
+      </RemoteRunnable>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "880ECA62247E2DD20035B079"
-            BuildableName = "Image Picker.app"
-            BlueprintName = "Image Picker"
-            ReferencedContainer = "container:Image Picker.xcodeproj">
+            BuildableName = "Meme 1.1.app"
+            BlueprintName = "Meme 1.1"
+            ReferencedContainer = "container:Meme 1.1.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -89,9 +90,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "880ECA62247E2DD20035B079"
-            BuildableName = "Image Picker.app"
-            BlueprintName = "Image Picker"
-            ReferencedContainer = "container:Image Picker.xcodeproj">
+            BuildableName = "Meme 1.1.app"
+            BlueprintName = "Meme 1.1"
+            ReferencedContainer = "container:Meme 1.1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
