@@ -40,13 +40,9 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         super.viewDidLoad()
         
         // Set text for each field
-        self.topText.text = "TOP"
-        self.topText.defaultTextAttributes = memeTextAttributes
-        self.topText.textAlignment = .center
-        
-        self.bottomText.text = "BOTTOM"
-        self.bottomText.defaultTextAttributes = memeTextAttributes
-        self.bottomText.textAlignment = .center
+        configure(textField: self.topText, withText: "TOP")
+        configure(textField: self.bottomText, withText: "BOTTOM")
+
         
         //Disabling the camera button in simulator
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -203,5 +199,10 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         bottomText.text = "BOTTOM"
     }
     
+    //
+    func configure(textField: UITextField, withText text: String) {
+        textField.text = text
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
+    }
 }
-
