@@ -75,19 +75,13 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     // Import image from album
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
         
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+        presentImagePickerWith(sourceType: .photoLibrary)
     }
     
     // Import image from camera
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerController.SourceType.camera
-        present(imagePicker, animated: true, completion: nil)
+        
+        presentImagePickerWith(sourceType: .camera)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -99,6 +93,14 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         }
        
         
+    }
+    
+    //
+    func presentImagePickerWith(sourceType: UIImagePickerController.SourceType) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = sourceType
+        present(imagePicker, animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
