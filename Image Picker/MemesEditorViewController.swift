@@ -8,16 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate,
+class MemesEditorViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate, UITextFieldDelegate {
     
-    // Struct
-    struct Meme {
-        var topText: String
-        var bottomText: String
-        let originalImage: UIImage
-        let memedImage: UIImage
-    }
     
     // Properties
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
@@ -159,7 +152,11 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     // Save the meme
     func save() {
         // Create the meme
-        _ = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
+        let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imagePickerView.image!, memedImage: generateMemedImage())
+        
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     func generateMemedImage() -> UIImage {
         
@@ -185,9 +182,9 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         let activityController = UIActivityViewController(activityItems:    [sharedImage], applicationActivities: nil)
         self.present(activityController, animated: true, completion: nil)
         
-        activityController.completionWithItemsHandler = { (activity, success, items, error) in
-            if(success) {
-                self.save()
+        activityController.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
+            if completed {
+                self.save() 
             }
         }
     }
@@ -198,6 +195,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         imagePickerView.image = nil
         topText.text = "TOP"
         bottomText.text = "BOTTOM"
+        self.dismiss(animated: true, completion: nil) //added dismiss
+
     }
     
     // Configure text field with text and assign meme text attribute
